@@ -135,9 +135,10 @@ class Cron(threading.Thread):
                     self.session.ui.error(('%s failed in %s: %s'
                                            ) % (name, self.name, e))
                 finally:
-                    self.schedule[name][4] = 'ok'
-                    self.last_run = time.time()
-                    self.running = 'Finished %s' % self.running
+                    if name in self.schedule:
+                        self.schedule[name][4] = 'ok'
+                        self.last_run = time.time()
+                        self.running = 'Finished %s' % self.running
 
             # Some tasks take longer than others, so use the time before
             # executing tasks as reference for the delay

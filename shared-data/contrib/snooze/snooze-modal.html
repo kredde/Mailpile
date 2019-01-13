@@ -1,0 +1,37 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close button-info" data-dismiss="modal"
+              aria-hidden="true">&times;</button>
+      <h4 class="modal-title">
+        <span class="icon-settings"></span>
+        {{_("Snooze")}}
+      </h4>
+    </div>
+    <div class="modal-body clearfix">     
+      <p class="message paragraph-important">
+        <span class="icon-settings"></span> {{_("Choose when you want to be reminded")}}
+      </p>
+
+      <div class="text-center">
+        <label for="time">{{_("Select time")}}</label>
+        <input name="custom-time" type="number" id="time-input"/>
+        <select name="time" id="time-select">
+          <option value="1">Seconds</option>
+          <option value="60">Minutes</option> 
+          <option value="3600">Hours</option>  
+          <option value="86400">Days</option>
+        </select><br>
+        
+      </div>     
+      
+    <div class="modal-footer">      
+      <div class="right">
+        <button class="button-secondary right" onClick="javascript:Mailpile.plugins.snooze.snooze();">
+          <span class="icon-clock"></span>
+          {{_("Snooze Mail")}}
+        </button> &nbsp;
+      </div>     
+    </div>
+  </div>
+</div>

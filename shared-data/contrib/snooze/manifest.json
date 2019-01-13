@@ -1,0 +1,34 @@
+{
+    "name": "snooze",
+    "author": "Kristian Schwienbacher <kr3dde@gmail.com>",
+    "description": "A plugin that allows users to snooze their email, to be reminded later about them.",
+    "display": true,
+    "public": true,
+    "config": {},
+    "code": {
+        "python": ["snooze.py"],
+        "javascript": ["snooze.js"]
+    },
+    "routes": {
+        "/snooze/": {"file": "snooze.json", "api": 0},
+        "/jsapi/templates/snooze-modal.html": {"file": "snooze-modal.html"}
+    },
+    "user_interface": {
+        "selection_actions": [
+            {
+                "context": ["/search/"],
+                "name": "snooze",
+                "text": "Snooze",
+                "description": "Snooze this message",
+                "icon": "clock"
+            }
+        ]
+    },
+    "commands": [
+        {
+            "class": "snoozeCommand",
+            "url": "snooze",
+            "name": "snooze"
+        }
+    ]
+}

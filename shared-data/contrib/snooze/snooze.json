@@ -1,0 +1,9 @@
+{% if result %}
+  {
+    "data": "{{ result }}"
+  }
+{% else %}
+  {
+    "error": "error"
+  }  
+{% endif %}
